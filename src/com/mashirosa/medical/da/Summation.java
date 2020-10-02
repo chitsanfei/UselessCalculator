@@ -3,10 +3,10 @@ package com.mashirosa.medical.da;
 
 public class Summation extends InputData{
     private int errorNumber = 0; // 私有化成员变量，用于阻止程序的运行
-    public float sumNumber = 0; // 求和数，作为最后结果返回
+    public double sumNumber = 0; // 求和数，作为最后结果返回
 
     public Summation(){}
-    public float doSum(int numberLong) throws InterruptedException {
+    public double doSum(int numberLong) throws InterruptedException {
         if (errorNumber == 1){
             System.out.println("程序出现了错误，错误码：1");
             java.lang.System.exit(1);
@@ -19,7 +19,7 @@ public class Summation extends InputData{
         }
         return this.sumNumber; // 返回求和结果
     }
-    public void doSumInput(int sumDataCaseNO,float sumDataCaseDD){
+    public void doSumInput(int sumDataCaseNO, double sumDataCaseDD){
         if (errorNumber == 1){
             System.out.println("程序出现了错误，错误码：1");
             java.lang.System.exit(1);
@@ -27,7 +27,7 @@ public class Summation extends InputData{
             super.inputInfo(sumDataCaseNO,sumDataCaseDD);
         }
     }
-    public float doSumReturnSingle(int sumDataCaseNO){
+    public double doSumReturnSingle(int sumDataCaseNO){
         if (errorNumber == 1){
             System.out.println("程序出现了错误，错误码：1");
             java.lang.System.exit(1);
@@ -52,7 +52,7 @@ public class Summation extends InputData{
             System.out.print(sumDataCase[i] + " ");
         }
     }
-    public float doSumReturnMultiInTotal(int numberLong){
+    public double doSumReturnMultiInTotal(int numberLong){
         if (errorNumber == 1){
             System.out.println("程序出现了错误，错误码：1");
             java.lang.System.exit(1);

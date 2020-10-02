@@ -25,8 +25,9 @@ public class Main {
                 Variance var = new Variance();
                 System.out.print("请输入你所要进行求和的数据量，不超过999：");
                 numberLong = AnotherScanner.s.nextInt();
-                System.out.println("\n最后求得的方差是：" + var.doVariance(numberLong));
-                System.out.println("最后求得的标准差是：" + var.standardDeviation());
+                System.out.println("\n最后求得的方差是：" + var.doVari(numberLong));
+                System.out.println("最后求得的总体标准差是：" + var.pStandardDeviation());
+                System.out.println("最后求得的样本标准差是：" + var.sStandardDeviation());
                 break;
         }
     }
