@@ -1,5 +1,9 @@
 package com.mashirosa.medical.da;
 
+/*
+    @Author:MashiroSA
+ */
+
 public class Main {
 
     public static void main(String[] args) throws Exception {
@@ -30,7 +34,7 @@ public class Main {
                 System.out.println("最后求得的样本标准差是：" + var.sStandardDeviation());
                 break;
             case 3:
-                System.out.println("请输入数据总量，目前支持2-30个数据的不确定度计算");
+                System.out.print("请输入数据总量，目前支持2-21个数据的不确定度计算:");
                 numberLong = AnotherScanner.s.nextInt();
                 Uncertainty unc = new Uncertainty();
                 unc.doUncerReturnAM(numberLong);

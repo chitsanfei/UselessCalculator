@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: com.mashirosa.medical.da.Main
+Class-Path: lib/dom4j-1.6.1.jar
+

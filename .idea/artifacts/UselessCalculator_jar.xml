@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact build-on-make="true" name="UselessCalculator:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/UselessCalculator_jar</output-path>
+    <root id="root">
+      <element id="archive" name="UselessCalculator.jar">
+        <element id="module-output" name="UselessCalculator" />
+      </element>
+      <element id="directory" name="res">
+        <element id="file-copy" path="$PROJECT_DIR$/res/tn.xml" />
+      </element>
+      <element id="directory" name="lib">
+        <element id="file-copy" path="$PROJECT_DIR$/lib/dom4j-1.6.1.jar" />
+      </element>
+    </root>
+  </artifact>
+</component>

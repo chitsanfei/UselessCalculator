@@ -6,7 +6,7 @@ public class Summation extends InputData{
     public double sumNumber = 0; // 求和数，作为最后结果返回
 
     public Summation(){}
-    public double doSum(int numberLong) throws InterruptedException {
+    public double doSum(int numberLong) throws InterruptedException { // 基本求和方法，会返回值
         if (errorNumber == 1){
             System.out.println("程序出现了错误，错误码：1");
             java.lang.System.exit(1);
@@ -19,7 +19,7 @@ public class Summation extends InputData{
         }
         return this.sumNumber; // 返回求和结果
     }
-    public void doSumInput(int sumDataCaseNO, double sumDataCaseDD){
+    public void doSumInput(int sumDataCaseNO, double sumDataCaseDD){ // 独立输入方法，将数据放入父对象数组中，用以接下来的计算
         if (errorNumber == 1){
             System.out.println("程序出现了错误，错误码：1");
             java.lang.System.exit(1);
@@ -27,7 +27,7 @@ public class Summation extends InputData{
             super.inputInfo(sumDataCaseNO,sumDataCaseDD);
         }
     }
-    public double doSumReturnSingle(int sumDataCaseNO){
+    public double doSumReturnSingle(int sumDataCaseNO){ // 返回父类对象数组储存中的某个数据
         if (errorNumber == 1){
             System.out.println("程序出现了错误，错误码：1");
             java.lang.System.exit(1);
@@ -36,7 +36,7 @@ public class Summation extends InputData{
             return super.sumDataCase[sumDataCaseNO];
         }
     }
-    public void doSumShowSingle(int sumDataCaseNO){
+    public void doSumShowSingle(int sumDataCaseNO){ // 显示父类对象数组储存中的某个数据，不返回值
         if (errorNumber == 1){
             System.out.println("程序出现了错误，错误码：1");
             java.lang.System.exit(1);
@@ -44,7 +44,7 @@ public class Summation extends InputData{
             System.out.print("第"+ sumDataCaseNO +"个数据，" + "当前储存的数据是："+ super.sumDataCase[sumDataCaseNO]);
         }
     }
-    public void doSumShowMulti(){
+    public void doSumShowMulti(){ // 显示父类对象数组储存中的多个数据，不返回值
         int numberLong;
         numberLong=super.numberLong;
         System.out.print("当前已经输入的数据是：");
@@ -52,7 +52,7 @@ public class Summation extends InputData{
             System.out.print(sumDataCase[i] + " ");
         }
     }
-    public double doSumReturnMultiInTotal(int numberLong){
+    public double doSumReturnMultiInTotal(int numberLong){ // 求和，需要先调用doSumInput，才会有结果
         if (errorNumber == 1){
             System.out.println("程序出现了错误，错误码：1");
             java.lang.System.exit(1);
@@ -64,4 +64,3 @@ public class Summation extends InputData{
         return this.sumNumber; // 返回求和结果
     }
 }
-// todo:为summation类添加注释

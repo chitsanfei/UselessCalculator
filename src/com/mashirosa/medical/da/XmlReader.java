@@ -7,19 +7,19 @@ import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
-public class XmlReader {
+public class XmlReader { // 别人写的xml读取方法，我进行了一点点修改
 
     public static double reader(String id) throws Exception {
         double tn = 0;
         SAXReader reader = new SAXReader();
-        File file = new File("res/tn.xml");
+        File file = new File("./res","tn.xml").getCanonicalFile();
         Document document = reader.read(file);
         Element root = document.getRootElement();
         List<Element> childElements = root.elements();
         for (Element child : childElements) {
             if (child.attributeValue("id").equals(id))
             {
-                return Double.valueOf(child.elementText("info"));
+                return Double.valueOf(child.elementText("info")); // 将字符串类型转换为double类
             }
             //未知属性名情况下
             /*List<Attribute> attributeList = child.attributes();

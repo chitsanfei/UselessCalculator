@@ -6,13 +6,9 @@ public class Variance extends InputData{
     public double totalDifference = 0;
     public double varAnswer = 0;
     public double varSSD = 0;
-    /*
-    * doVari是简单的计算方差的方法，会调用类InputData中的input方法并使用父类数组储存数据，需要注意的是需要先调用doVari方法，才能调用之后的sStandardDeviation和pStandardDeviation。
-    * doVariInput方法是独立的向父类数组写入数据的方法，调用该方法不会返回值，需要配合使用doVariReturnExceptSum，之后才可以使用sStandardDeviation和pStandardDeviation。
-     */
 
     public Variance(){}
-    public double doVari(int numberLong) throws InterruptedException {
+    public double doVari(int numberLong) throws InterruptedException { //doVari是简单的计算方差的方法，会调用类InputData中的input方法并使用父类数组储存数据，需要注意的是需要先调用doVari方法，才能调用之后的sStandardDeviation和pStandardDeviation。
         super.input(numberLong);
         Summation sum = new Summation();
         for(int i=0;i<super.numberLong;i++){
@@ -69,7 +65,7 @@ public class Variance extends InputData{
     }
     public void doVariInput(int varDataCaseNO,double varDataCaseDD){
         super.inputInfo(varDataCaseNO,varDataCaseDD);
-    }
+    } // doVariInput方法是独立的向父类数组写入数据的方法，调用该方法不会返回值，需要配合使用doVariReturnExceptSum，之后才可以使用sStandardDeviation和pStandardDeviation。
     public double doVariReturnExceptSum(int numberLong, double sum){ // 该方法不会计算sum，需要外部传入
         super.numberLong = numberLong;
         avarange = sum / numberLong;
