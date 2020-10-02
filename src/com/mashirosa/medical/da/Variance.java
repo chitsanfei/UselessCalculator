@@ -71,6 +71,7 @@ public class Variance extends InputData{
         super.inputInfo(varDataCaseNO,varDataCaseDD);
     }
     public double doVariReturnExceptSum(int numberLong, double sum){ // 该方法不会计算sum，需要外部传入
+        super.numberLong = numberLong;
         avarange = sum / numberLong;
         double difference[] = new double[numberLong];
         for(int i=0;i<super.numberLong;i++){
