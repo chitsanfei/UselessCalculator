@@ -10,6 +10,7 @@ public class Main {
         int caseNumber = 0;
         int numberLong = 0;
         System.out.println("欢迎使用弱智计算器");
+        System.out.println("版本:v0.1.0 作者:MashiroSA");
 //        VIP vip = new VIP(); // 创建VIP对象
 //        vip.checkVIP(); // 调用VIP检测方法
         for(int i=0;i<10;i++){
@@ -18,6 +19,10 @@ public class Main {
         System.out.println("\n数字1：求和；\n数字2：求方差、标准差\n数字3：求不确定度");
         System.out.print("输入对应数字，回车进入相应功能:");
         caseNumber = AnotherScanner.s.nextInt();
+        if (caseNumber > 3 || caseNumber < 1){ // 添加检验位置
+            System.out.println("程序出现了错误，输入数字不合法");
+            java.lang.System.exit(1);
+        }
         switch (caseNumber){
             case 1:
                 Summation sum = new Summation(); //创建求和对象
@@ -36,9 +41,15 @@ public class Main {
             case 3:
                 System.out.print("请输入数据总量，目前支持2-21个数据的不确定度计算:");
                 numberLong = AnotherScanner.s.nextInt();
-                Uncertainty unc = new Uncertainty();
+                Uncertainty unc = new Uncertainty(); // 创建计算不确定度的对象
                 unc.doUncerReturnAM(numberLong);
-                unc.doUncerShowFinalAnswer();
+                unc.doUncerShowFinalAnswer(); // 展示最终答案
+                break;
+        }
+        try{
+            System.out.println("程序将在100s后退出，请及时记录数据");
+            Thread.sleep(100000); // 添加thread.sleep以阻止程序快速关闭
+        }catch(Exception e){
         }
     }
 }
