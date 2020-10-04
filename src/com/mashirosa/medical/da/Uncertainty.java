@@ -41,11 +41,11 @@ public class Uncertainty extends InputData{
     }
     public void doUncerShowFinalAnswer(){ // 需要执行doUncerReturnAM后才可调用
         DecimalFormat df = new DecimalFormat( "0.000 ");
-        System.out.println("经计算后A类不确定度（位于置信区间95%）的值为:" + new BigDecimal(uncertainty_A).setScale(2, BigDecimal.ROUND_HALF_UP));
+        System.out.println("经计算后A类不确定度（位于置信区间95%）的值为:" + new BigDecimal(uncertainty_A).setScale(3, BigDecimal.ROUND_HALF_UP));
         System.out.println("经计算后B类不确定度（仪器决定）的值为:" + uncertainty_B);
-        System.out.println("总不确定度表示为:" + new BigDecimal(uncertainty_T).setScale(2, BigDecimal.ROUND_HALF_UP));
+        System.out.println("总不确定度表示为:" + new BigDecimal(uncertainty_T).setScale(3, BigDecimal.ROUND_HALF_UP));
         System.out.println("最后答案表示为：");
-        System.out.println("x = " + uncerAva +" ± "+ new BigDecimal(uncertainty_T).setScale(2, BigDecimal.ROUND_HALF_UP));
+        System.out.println("x = " + uncerAva +" ± "+ new BigDecimal(uncertainty_T).setScale(3, BigDecimal.ROUND_HALF_UP));
         String UrxP = df.format(uncertainty_T/uncerAva); // 对数据进行格式化处理，也许有更好的方法
         Double.valueOf(UrxP); // string转换double
         System.out.println("Urx = " + Double.valueOf(UrxP)*100 +"%");
