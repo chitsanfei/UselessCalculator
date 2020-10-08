@@ -16,10 +16,10 @@ public class Main {
         for(int i=0;i<10;i++){
             System.out.print("-");
         }
-        System.out.println("\n数字1：求和；\n数字2：求方差、标准差\n数字3：求不确定度");
+        System.out.println("\n数字1：求和；\n数字2：求方差、标准差\n数字3：求不确定度\n数字4：普通数学运算\n数字5：实验测量数据次数-数据折线图生成");
         System.out.print("输入对应数字，回车进入相应功能:");
         caseNumber = AnotherScanner.s.nextInt();
-        if (caseNumber > 3 || caseNumber < 1){ // 添加检验位置
+        if (caseNumber > 5 || caseNumber < 1){ // 添加检验位置
             System.out.println("程序出现了错误，输入数字不合法");
             java.lang.System.exit(1);
         }
@@ -45,6 +45,18 @@ public class Main {
                 unc.doUncerReturnAM(numberLong);
                 unc.doUncerShowFinalAnswer(); // 展示最终答案
                 break;
+            case 4:
+                System.out.print("请输入表达式:");
+                String expression = AnotherScanner.s.next();
+                double result = Calculator.conversion(expression);
+                System.out.println("最终结果为:"+ result);
+            case 5:
+                System.out.print("请输入你需要生成的测量曲线的测量次数:");
+                PrintFunction pf = new PrintFunction();
+                pf.xLimit = AnotherScanner.s.nextInt();
+                System.out.println("现在开始数据录入了");
+                pf.printFunctionMethodInput();
+                pf.printFunctionMethod();
         }
         try{
             System.out.println("程序将在100s后退出，请及时记录数据");
