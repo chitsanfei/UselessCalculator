@@ -4,7 +4,8 @@ import com.sun.org.apache.xalan.internal.xslt.Process;
 
 public class InputData {
     public int numberLong = 0; // 对数据最大量的限定的实例变量
-    public double sumDataCase[] = new double[999]; // 对输入数据的数组进行初始化
+    private int sumDataCaseDefaultMax = 256;
+    public double sumDataCase[] = new double[sumDataCaseDefaultMax]; // 对输入数据的数组进行初始化
     public void InputData () {} // 空构造函数
     public void input(int numberLong) throws InterruptedException{
         Process processSum = new Process();
@@ -30,5 +31,8 @@ public class InputData {
     }
     public void inputInfo(int sumDataCaseNO,double sumDataCaseDD){
         this.sumDataCase[sumDataCaseNO] = sumDataCaseDD;
+    }
+    public int getSumDataCaseDefaultMax() {
+        return sumDataCaseDefaultMax;
     }
 }

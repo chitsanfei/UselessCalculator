@@ -10,7 +10,7 @@ public class Main {
         int caseNumber = 0;
         int numberLong = 0;
         System.out.println("欢迎使用弱智计算器");
-        System.out.println("版本:v0.1.0 作者:MashiroSA");
+        System.out.println("版本:v0.1.1 作者:MashiroSA");
 //        VIP vip = new VIP(); // 创建VIP对象
 //        vip.checkVIP(); // 调用VIP检测方法
         for(int i=0;i<10;i++){
@@ -26,13 +26,13 @@ public class Main {
         switch (caseNumber){
             case 1:
                 Summation sum = new Summation(); //创建求和对象
-                System.out.print("请输入你所要进行求和的数据量，不超过999：");
+                System.out.print("请输入你所要进行求和的数据量，不超过256：");
                 numberLong = AnotherScanner.s.nextInt();
                 System.out.println("\n最后求得的和是：" + sum.doSum(numberLong)); //返回求和对象的doSum方法值
                 break;
             case 2:
                 Variance var = new Variance();
-                System.out.print("请输入你所要进行求和的数据量，不超过999：");
+                System.out.print("请输入你所要进行求和的数据量，不超过256：");
                 numberLong = AnotherScanner.s.nextInt();
                 System.out.println("\n最后求得的方差是：" + var.doVari(numberLong));
                 System.out.println("最后求得的总体标准差是：" + var.pStandardDeviation());
@@ -50,6 +50,7 @@ public class Main {
                 String expression = AnotherScanner.s.next();
                 double result = Calculator.conversion(expression);
                 System.out.println("最终结果为:"+ result);
+                break;
             case 5:
                 System.out.print("请输入你需要生成的测量曲线的测量次数:");
                 PrintFunction pf = new PrintFunction();
@@ -57,6 +58,7 @@ public class Main {
                 System.out.println("现在开始数据录入了");
                 pf.printFunctionMethodInput();
                 pf.printFunctionMethod();
+                break;
         }
         try{
             System.out.println("程序将在100s后退出，请及时记录数据");
