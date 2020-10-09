@@ -13,7 +13,17 @@ public class Uncertainty extends InputData{
     public double uncerSum = 0; // 求和
     public double uncerAva = 0; // 平均值
     public double tn = 0; // tn实例变量
-    public Uncertainty (){} // 构造函数
+    private boolean setVIP = true; //对vip检测的传递
+
+    public Uncertainty(){
+        super();
+        super.setVIP(this.setVIP);
+    }
+    public Uncertainty(boolean isVIP){
+        super();
+        this.setVIP = isVIP;
+        super.setVIP(this.setVIP);
+    }
     public void doUncerReturnAM(int numberLong) throws Exception { // 自行判断tn的不确定度计算方法，不会返回值
         if(numberLong < 2 || numberLong > 21){ // 限制输入数据总量的个数在2-30范围之间
             System.out.println("程序出现了错误");

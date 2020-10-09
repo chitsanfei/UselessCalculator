@@ -6,8 +6,17 @@ public class Variance extends InputData{
     public double totalDifference = 0;
     public double varAnswer = 0;
     public double varSSD = 0;
+    private boolean setVIP = true; //对vip检测的传递
 
-    public Variance(){}
+    public Variance(){
+        super();
+        super.setVIP(this.setVIP);
+    }
+    public Variance(boolean isVIP){
+        super();
+        this.setVIP = isVIP;
+        super.setVIP(this.setVIP);
+    }
     public double doVari(int numberLong) throws InterruptedException { //doVari是简单的计算方差的方法，会调用类InputData中的input方法并使用父类数组储存数据，需要注意的是需要先调用doVari方法，才能调用之后的sStandardDeviation和pStandardDeviation。
         super.input(numberLong);
         Summation sum = new Summation();

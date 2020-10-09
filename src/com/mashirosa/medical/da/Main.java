@@ -9,10 +9,11 @@ public class Main {
     public static void main(String[] args) throws Exception {
         int caseNumber = 0;
         int numberLong = 0;
+
         System.out.println("欢迎使用弱智计算器");
         System.out.println("版本:v0.1.1 作者:MashiroSA");
-//        VIP vip = new VIP(); // 创建VIP对象
-//        vip.checkVIP(); // 调用VIP检测方法
+        VIP vip = new VIP(); // 创建VIP对象，请勿注释
+//        vip.checkVIP(); // 调用VIP检测方法，关闭vip功能请注释该行
         for(int i=0;i<10;i++){
             System.out.print("-");
         }
@@ -25,13 +26,13 @@ public class Main {
         }
         switch (caseNumber){
             case 1:
-                Summation sum = new Summation(); //创建求和对象
+                Summation sum = new Summation(vip.isVIP()); //创建求和对象
                 System.out.print("请输入你所要进行求和的数据量，不超过256：");
                 numberLong = AnotherScanner.s.nextInt();
                 System.out.println("\n最后求得的和是：" + sum.doSum(numberLong)); //返回求和对象的doSum方法值
                 break;
             case 2:
-                Variance var = new Variance();
+                Variance var = new Variance(vip.isVIP());
                 System.out.print("请输入你所要进行求和的数据量，不超过256：");
                 numberLong = AnotherScanner.s.nextInt();
                 System.out.println("\n最后求得的方差是：" + var.doVari(numberLong));
@@ -41,7 +42,7 @@ public class Main {
             case 3:
                 System.out.print("请输入数据总量，目前支持2-21个数据的不确定度计算:");
                 numberLong = AnotherScanner.s.nextInt();
-                Uncertainty unc = new Uncertainty(); // 创建计算不确定度的对象
+                Uncertainty unc = new Uncertainty(vip.isVIP()); // 创建计算不确定度的对象
                 unc.doUncerReturnAM(numberLong);
                 unc.doUncerShowFinalAnswer(); // 展示最终答案
                 break;
@@ -53,7 +54,7 @@ public class Main {
                 break;
             case 5:
                 System.out.print("请输入你需要生成的测量曲线的测量次数:");
-                PrintFunction pf = new PrintFunction();
+                PrintFunction pf = new PrintFunction(vip.isVIP());
                 pf.xLimit = AnotherScanner.s.nextInt();
                 System.out.println("现在开始数据录入了");
                 pf.printFunctionMethodInput();

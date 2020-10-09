@@ -4,8 +4,17 @@ package com.mashirosa.medical.da;
 public class Summation extends InputData{
     private int errorNumber = 0; // 私有化成员变量，用于阻止程序的运行
     public double sumNumber = 0; // 求和数，作为最后结果返回
+    private boolean setVIP = true;
 
-    public Summation(){}
+    public Summation(){
+        super();
+        super.setVIP(this.setVIP);
+    }
+    public Summation(boolean isVIP){
+        super();
+        this.setVIP = isVIP;
+        super.setVIP(this.setVIP);
+    }
     public double doSum(int numberLong) throws InterruptedException { // 基本求和方法，会返回值
         if (errorNumber == 1){
             System.out.println("程序出现了错误，错误码：1");

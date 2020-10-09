@@ -2,6 +2,7 @@ package com.mashirosa.medical.da;
 
 import javax.swing.JFrame;
 
+import com.sun.org.apache.xalan.internal.xslt.Process;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
@@ -12,13 +13,32 @@ import org.jfree.data.xy.XYSeriesCollection;
 public class PrintFunction extends InputData{
     public int xLimit = 0;
     public double numberCache = 0;
+    private boolean isVIP = true;
 
-    public void printFunctionMethod() {
+    public PrintFunction(){}
+    public PrintFunction(boolean isVIP){
+        this.isVIP = isVIP;
+    }
+    public void printFunctionMethod() throws InterruptedException{
         XYSeries series = new XYSeries("xySeries");
-        for (int x = 0; x < xLimit; x++) {
-            double y = super.sumDataCase[x];
-            series.add(x, y);
+
+        Process processPF = new Process();
+        Thread threadPF = new Thread();
+        threadPF.setName("绘制函数线程");
+        threadPF.start();
+        if(this.isVIP){
+            for (int x = 0; x < xLimit; x++) {
+                double y = super.sumDataCase[x];
+                series.add(x, y);
+            }
+        }else {
+            for (int x = 0; x < xLimit; x++) {
+                double y = super.sumDataCase[x];
+                series.add(x, y);
+                Thread.sleep(1000);
+            }
         }
+
         XYSeriesCollection dataset = new XYSeriesCollection();
         dataset.addSeries(series);
         JFreeChart chart = ChartFactory.createXYLineChart(
