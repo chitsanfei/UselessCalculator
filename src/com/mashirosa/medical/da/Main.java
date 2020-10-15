@@ -17,7 +17,7 @@ public class Main {
         for(int i=0;i<10;i++){
             System.out.print("-");
         }
-        System.out.println("\n数字1：求和；\n数字2：求方差、标准差\n数字3：求不确定度\n数字4：普通数学运算\n数字5：实验测量数据次数-数据折线图生成");
+        System.out.println("\n数字1：求和\n数字2：求方差、标准差\n数字3：求不确定度\n数字4：普通数学运算\n数字5：实验测量数据次数-数据折线图生成");
         System.out.print("输入对应数字，回车进入相应功能:");
         caseNumber = AnotherScanner.s.nextInt();
         if (caseNumber > 5 || caseNumber < 1){ // 添加检验位置

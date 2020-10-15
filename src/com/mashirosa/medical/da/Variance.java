@@ -24,21 +24,32 @@ public class Variance extends InputData{
             sum.doSumInput(i,super.sumDataCase[i]);
         }
         double returnNumber = sum.doSumReturnMultiInTotal(numberLong);
-        avarange = returnNumber / numberLong;
+//        avarange = returnNumber / numberLong; 平均值计算
+        avarange = ArithHelper.div(returnNumber,numberLong);
         double difference[] = new double[numberLong];
         for(int i=0;i<super.numberLong;i++){
+            /*
             if(super.returnInfo(i) >= avarange) {
                 difference[i] = (super.returnInfo(i) - avarange) * (super.returnInfo(i) - avarange);
             }else {
                 difference[i] = (avarange - super.returnInfo(i)) * (avarange - super.returnInfo(i));
-            }
+            } // 一个对数据和平均值的差平方的计算
+             */
+            if(super.returnInfo(i) >= avarange) {
+                difference[i] = (ArithHelper.sub(super.returnInfo(i),avarange)) * (ArithHelper.sub(super.returnInfo(i),avarange));
+            }else {
+                difference[i] = (ArithHelper.sub(avarange,super.returnInfo(i))) * (ArithHelper.sub(avarange,super.returnInfo(i)));
+            }// 一个对数据和平均值的差平方的计算，使用精确方法
         }
         for(int i=0;i<super.numberLong;i++){
-            totalDifference = difference[i] + totalDifference;
+//            totalDifference = difference[i] + totalDifference;
+            totalDifference = ArithHelper.add(difference[i],totalDifference);
         }
-        this.varAnswer = totalDifference / super.numberLong;
-        this.varSSD = totalDifference / (super.numberLong - 1);
-        this.doVariShowMultiInfo();
+//        this.varAnswer = totalDifference / super.numberLong;
+//        this.varSSD = totalDifference / (super.numberLong - 1);
+        this.varAnswer = ArithHelper.div(totalDifference,super.numberLong); // 对总体标准差的传递
+        this.varSSD = ArithHelper.div(totalDifference,(super.numberLong - 1)); // 对样本标准差的传递
+        this.doVariShowMultiInfo();// 显示答案
         return varAnswer;
     }
     public double pStandardDeviation(){

@@ -25,6 +25,7 @@ public class Uncertainty extends InputData{
         super.setVIP(this.setVIP);
     }
     public void doUncerReturnAM(int numberLong) throws Exception { // 自行判断tn的不确定度计算方法，不会返回值
+        double cacheNumber; // 用于对部分数据的临时使用
         if(numberLong < 2 || numberLong > 21){ // 限制输入数据总量的个数在2-30范围之间
             System.out.println("程序出现了错误");
             java.lang.System.exit(1);
@@ -38,7 +39,8 @@ public class Uncertainty extends InputData{
             sum.doSumInput(i,super.sumDataCase[i]); // 对sum对象的父方法写入数据，以进行之后的返回数据过程
         }
         uncerSum = sum.doSumReturnMultiInTotal(numberLong); // 调用sum对象的方法返回计算数据
-        this.uncerAva = uncerSum / numberLong;
+//        this.uncerAva = uncerSum / numberLong;
+        this.uncerAva = ArithHelper.div(uncerSum,numberLong); // 使用高精度除法
         Variance var = new Variance();
         for(int i=0;i<numberLong;i++){
             var.doVariInput(i,super.sumDataCase[i]); // 对var对象的父方法写入数据，以进行之后的返回数据过程
@@ -46,8 +48,11 @@ public class Uncertainty extends InputData{
         var.doVariReturnExceptSum(numberLong,uncerSum); // 调用var对象的方法返回计算数据
         this.SSD = var.sStandardDeviation();
         this.tn = XmlReader.reader("00" + (numberLong-1)); // 查询数据量的tn值
-        uncertainty_A = (this.SSD * this.tn)/java.lang.Math.sqrt(numberLong); // 对A类不确定度进行计算
-        uncertainty_T = java.lang.Math.sqrt((uncertainty_A * uncertainty_A) + (uncertainty_B * uncertainty_B)); // 对总不确定度进行计算
+        cacheNumber = ArithHelper.mul(this.SSD,this.tn);
+//        uncertainty_A = (this.SSD * this.tn)/java.lang.Math.sqrt(numberLong); // 对A类不确定度进行计算
+        uncertainty_A = ArithHelper.div(cacheNumber,java.lang.Math.sqrt(numberLong)); // 对A类不确定度进行高精度计算
+//        uncertainty_T = java.lang.Math.sqrt((uncertainty_A * uncertainty_A) + (uncertainty_B * uncertainty_B)); // 对总不确定度进行计算
+        uncertainty_T = java.lang.Math.sqrt(ArithHelper.add(ArithHelper.mul(uncertainty_A , uncertainty_A) , ArithHelper.mul(uncertainty_B , uncertainty_B)));
     }
     public void doUncerShowFinalAnswer(){ // 需要执行doUncerReturnAM后才可调用
         DecimalFormat df = new DecimalFormat( "0.000 ");

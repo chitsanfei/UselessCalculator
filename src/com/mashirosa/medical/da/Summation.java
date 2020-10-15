@@ -23,7 +23,8 @@ public class Summation extends InputData{
             super.input(numberLong); // 调用父对象的Input方法
             this.doSumShowMulti(); // 调用本类方法显示已经输入的数据
             for(int i=0;i<super.numberLong;i++){
-                this.sumNumber = super.sumDataCase[i] + this.sumNumber; // 循环，求和
+//                this.sumNumber = super.sumDataCase[i] + this.sumNumber; // 循环，求和（普通运算符，弃用）
+                this.sumNumber = ArithHelper.add(super.sumDataCase[i],this.sumNumber); //使用类提高运算精确度
             }
         }
         return this.sumNumber; // 返回求和结果
@@ -67,7 +68,8 @@ public class Summation extends InputData{
             java.lang.System.exit(1);
         }else{
             for(int i=0;i<numberLong;i++){
-                this.sumNumber = super.sumDataCase[i] + this.sumNumber; // 循环，求和
+//                this.sumNumber = super.sumDataCase[i] + this.sumNumber; // 循环，求和（弃用）
+                this.sumNumber = ArithHelper.add(super.sumDataCase[i],this.sumNumber); //使用类提高运算精确度
             }
         }
         return this.sumNumber; // 返回求和结果
