@@ -10,7 +10,6 @@ public class InputData {
 
     public void InputData () {} // 空构造函数
     public void input(int numberLong) throws InterruptedException{
-        Process processSum = new Process();
         Thread threadSum = new Thread(); // 创建线程，为之后的thread.sleep准备
         threadSum.setName("求和构造的线程");
         threadSum.start();
