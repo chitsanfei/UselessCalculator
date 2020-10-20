@@ -1,1 +1,1 @@
-cd ./ & Java -jar ./UselessCalculator.jar
+cd ./ & java -jar ./UselessCalculator.jar
