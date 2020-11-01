@@ -3,7 +3,7 @@ package com.mashirosa.medical.da;
 import java.math.*;
 import java.text.DecimalFormat;
 
-public class Uncertainty extends InputData{
+public class Uncertainty extends DataCase {
     private int errorNumber = 0;
     public int numberLong = 0;
     public double uncertainty_A = 0; // A类不确定度实例变量

@@ -10,7 +10,7 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 
-public class PrintFunction extends InputData{
+public class PrintFunction extends DataCase {
     public int xLimit = 0;
     public double numberCache = 0;
     private boolean isVIP = true;

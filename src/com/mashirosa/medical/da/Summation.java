@@ -1,7 +1,7 @@
 package com.mashirosa.medical.da;
 
 
-public class Summation extends InputData{
+public class Summation extends DataCase {
     private int errorNumber = 0; // 私有化成员变量，用于阻止程序的运行
     public double sumNumber = 0; // 求和数，作为最后结果返回
     private boolean setVIP = true;

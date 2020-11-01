@@ -2,7 +2,7 @@ package com.mashirosa.medical.da;
 
 import com.sun.org.apache.xalan.internal.xslt.Process;
 
-public class InputData {
+public class DataCase {
     public int numberLong = 0; // 对数据最大量的限定的实例变量
     private int sumDataCaseDefaultMax = 256;
     public double sumDataCase[] = new double[sumDataCaseDefaultMax]; // 对输入数据的数组进行初始化

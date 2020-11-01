@@ -1,6 +1,6 @@
 package com.mashirosa.medical.da;
 
-public class Variance extends InputData{
+public class Variance extends DataCase {
     public int errorNumber = 0;
     public double avarange = 0;
     public double totalDifference = 0;
