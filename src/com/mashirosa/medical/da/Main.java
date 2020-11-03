@@ -13,16 +13,16 @@ public class Main {
         int numberLong = 0;
 
         System.out.println("欢迎使用弱智计算器");
-        System.out.println("版本:v0.1.1 作者:MashiroSA");
+        System.out.println("版本:v0.1.2 作者:MashiroSA");
         VIP vip = new VIP(); // 创建VIP对象，请勿注释
 //        vip.checkVIP(); // 调用VIP检测方法，关闭vip功能请注释该行
         for(int i=0;i<10;i++){
             System.out.print("-");
         }
-        System.out.println("\n数字1：求和\n数字2：求方差、标准差\n数字3：求不确定度\n数字4：普通数学运算\n数字5：实验测量数据次数-数据折线图生成");
+        System.out.println("\n数字1：求和\n数字2：求方差、标准差\n数字3：求不确定度\n数字4：普通数学运算\n数字5：实验测量数据次数-数据折线图生成\n数字6：生成线性回归方程");
         System.out.print("输入对应数字，回车进入相应功能:");
         caseNumber = AnotherScanner.s.nextInt();
-        if (caseNumber > 5 || caseNumber < 1){ // 添加检验位置
+        if (caseNumber > 6 || caseNumber < 1){ // 添加检验位置
             System.out.println("程序出现了错误，输入数字不合法");
             java.lang.System.exit(1);
         }
@@ -59,8 +59,10 @@ public class Main {
                 PrintFunction pf = new PrintFunction(vip.isVIP());
                 pf.xLimit = AnotherScanner.s.nextInt();
                 System.out.println("现在开始数据录入了");
-                pf.printFunctionMethodInput();
                 pf.printFunctionMethod();
+                break;
+            case 6:
+                LinearRegression.run();
                 break;
         }
         try{
