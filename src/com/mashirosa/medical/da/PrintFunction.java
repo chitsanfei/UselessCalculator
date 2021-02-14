@@ -2,7 +2,6 @@ package com.mashirosa.medical.da;
 
 import javax.swing.JFrame;
 
-import com.sun.org.apache.xalan.internal.xslt.Process;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
@@ -22,9 +21,7 @@ public class PrintFunction{
     public void printFunctionMethod() throws InterruptedException{
         XYSeries series = new XYSeries("xySeries");
 
-        Process processPF = new Process();
         Thread threadPF = new Thread();
-        threadPF.setName("绘制函数线程");
         threadPF.start();
         if(this.isVIP){
             for (int i = 0; i < xLimit; i++) {

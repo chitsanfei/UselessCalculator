@@ -1,6 +1,5 @@
 package com.mashirosa.medical.da;
 
-import com.sun.org.apache.xalan.internal.xslt.Process;
 
 public class DataCase {
     public int numberLong = 0; // 对数据最大量的限定的实例变量
