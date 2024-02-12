@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tns>
+
+    <tn id="001">
+        <title>01</title>
+        <info>12.706</info>
+    </tn>
+
+    <tn id="002">
+        <title>02</title>
+        <info>4.303</info>
+    </tn>
+
+    <tn id="003">
+        <title>03</title>
+        <info>3.182</info>
+    </tn>
+
+    <tn id="004">
+        <title>04</title>
+        <info>2.776</info>
+    </tn>
+
+    <tn id="005">
+        <title>05</title>
+        <info>2.571</info>
+    </tn>
+
+    <tn id="006">
+        <title>06</title>
+        <info>2.447</info>
+    </tn>
+
+    <tn id="007">
+        <title>07</title>
+        <info>2.365</info>
+    </tn>
+
+    <tn id="008">
+        <title>08</title>
+        <info>2.306</info>
+    </tn>
+
+    <tn id="009">
+        <title>09</title>
+        <info>2.262</info>
+    </tn>
+
+    <tn id="010">
+        <title>10</title>
+        <info>2.228</info>
+    </tn>
+
+    <tn id="011">
+        <title>11</title>
+        <info>2.201</info>
+    </tn>
+
+    <tn id="012">
+        <title>12</title>
+        <info>2.179</info>
+    </tn>
+
+    <tn id="013">
+        <title>13</title>
+        <info>2.160</info>
+    </tn>
+
+    <tn id="014">
+        <title>14</title>
+        <info>2.145</info>
+    </tn>
+
+    <tn id="015">
+        <title>15</title>
+        <info>2.131</info>
+    </tn>
+
+    <tn id="016">
+        <title>16</title>
+        <info>2.120</info>
+    </tn>
+
+    <tn id="017">
+        <title>17</title>
+        <info>2.110</info>
+    </tn>
+
+    <tn id="018">
+        <title>18</title>
+        <info>2.101</info>
+    </tn>
+
+    <tn id="019">
+        <title>19</title>
+        <info>2.093</info>
+    </tn>
+
+    <tn id="020">
+        <title>20</title>
+        <info>2.086</info>
+    </tn>
+
+</tns>

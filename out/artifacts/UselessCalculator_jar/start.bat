@@ -1,0 +1,1 @@
+start jre\bin\java -jar UselessCalculator.jar
